@@ -9,7 +9,7 @@ import java.awt.Graphics;
 
 /**
  *
- * @author Satria Ramadhani and Modified by Muhammad Rayhan Nur
+ * @author Muhammad Rayhan Nur
  */
 public class Snack extends GameObject
 {
@@ -24,7 +24,7 @@ public class Snack extends GameObject
         super.setHeight(30);
     }
     
-    // Constructor with player position.
+    // Constructor with snack position.
     public Snack(int x, int y)
     {
         super(x, y, "Snack");
@@ -38,7 +38,7 @@ public class Snack extends GameObject
     @Override
     public void render(Graphics object)
     {
-        // Set player shape.
+        // Set snack shape and color.
         object.setColor(Color.decode("#FF0101"));
         object.fillOval(x, y, 30, 30);
     }

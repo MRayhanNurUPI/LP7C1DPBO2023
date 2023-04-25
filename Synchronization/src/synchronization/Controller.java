@@ -20,7 +20,7 @@ public class Controller extends KeyAdapter implements KeyListener
     
     private Game game;
     private Handler handler;
-    private char direction;
+    private char direction; // to store the player's current direction (so the score can only be increase if the player change the direction)
     
     /**
      * Constructor.
@@ -152,8 +152,9 @@ public class Controller extends KeyAdapter implements KeyListener
             }
             System.out.println("Player -> X: " + temp.x + " | Y: " + temp.y);
             System.out.println("Snack -> X: " + tempSnack.x + " | Y: " + tempSnack.y);
-                        
-            if((temp.getX()+25 >= tempSnack.getX() && temp.getX() <= tempSnack.getX()+25) && (temp.getY()+25 >= tempSnack.getY() && temp.getY() <= tempSnack.getY()+25))  {
+                    
+            // Set Eating Range (if the Player is around 25 close to the Snack, Player can eat and the score increase by 5)  
+            if ((temp.getX()+25 >= tempSnack.getX() && temp.getX() <= tempSnack.getX()+25) && (temp.getY()+25 >= tempSnack.getY() && temp.getY() <= tempSnack.getY()+25))  {
                 game.setScore(+5);
                 tempSnack.setX(handler.getRandomInt());
                 tempSnack.setY(handler.getRandomInt());

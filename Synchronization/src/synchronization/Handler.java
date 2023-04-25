@@ -67,6 +67,7 @@ public class Handler implements GameInterface
         this.object.remove(object);
     }
     
+    // Return random integer with a maximum 320 (because the maximum player's move range)
     public int getRandomInt() {
         int value = this.rand.nextInt(320);
         Math.ceil((value/5)*5);
